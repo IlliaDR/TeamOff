@@ -29,6 +29,7 @@ namespace ToDoList
             services.AddDbContext<ToDoDBContext>(options =>
                 options.UseSqlServer(connection));
             services.AddControllersWithViews();
+            services.AddCors();
 
             //services.AddControllers();
         }
@@ -42,8 +43,9 @@ namespace ToDoList
             }
 
             app.UseRouting();
+            app.UseCors(builder => builder.AllowAnyOrigin());
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
