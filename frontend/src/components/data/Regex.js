@@ -1,0 +1,1 @@
+export const regEx = /^(?!\s)[A-Za-z_.,?!\-0-9\s]+$/;
